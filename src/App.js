@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { Route, Link } from 'react-router-dom'
+import logo from './logo.svg'
+import './App.css'
+import axios from 'axios'
+import Form from './components/Form'
+import View from './components/View'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const baseURL = 'http://localhost:3000/responses'
+
+class App extends Component {
+  state = { isShown: true }
+
+  componentDidMount() {
+
+  }
+
+  render() {
+    return (
+      <div>
+        {this.state.isShown ? (<View />) : (<Form />)}
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
