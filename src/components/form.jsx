@@ -1,49 +1,51 @@
-import React from 'react'
+import React, { Component } from 'react'
+import $ from 'jquery'
+import Popper from 'popper.js'
+import 'bootstrap/dist/js/bootstrap.bundle.min'
 
-const Form = () => {
-    return (
-        <div className="modal fade" id="modalCenter" tabIndex="-1" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="false">
-            <div className="modal-dialog modal-dialog-centered" role="document">
-                <div className="modal-content">
-                    <div className="modal-header">
-                        <h5 className="modal-title" id="modalCenterTitle">Modal title</h5>
-                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="false">&times;</span>
-                        </button>
-                    </div>
-                    <div className="modal-body">
-                        ...
-      </div>
-                    <div className="modal-footer">
-                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" className="btn btn-primary">Save changes</button>
+class Form extends Component {
+    componentDidMount() {
+        $('#formModal').modal({ backdrop: 'static', keyboard: false })
+    }
+
+    render() {
+        return (
+            <div>
+                <div className="modal fade" id="formModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle">
+                    <div className="modal-dialog modal-dialog-centered" role="document">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title" id="exampleModalCenterTitle">Sassy Responses Generator</h5>
+                            </div>
+                            <div className="modal-body">
+                                <form>
+                                    <div className="form-group">
+                                        <select id="category">
+                                            <option value>Category...</option>
+                                            <option value>Dick pics</option>
+                                            <option value>Jackass</option>
+                                            <option value>Just being a dick</option>
+                                        </select>
+                                        <br></br>
+                                        <br></br>
+                                        <select id="rank">
+                                            <option value>Degree of burn...</option>
+                                            <option value>Whimsical</option>
+                                            <option value>Gonna need some Aloe Vera</option>
+                                            <option value>Manhood ruined</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="submit" className="btn btn-primary" data-dismiss="modal">Submit</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        // <div>
-        //     <p>
-        //         <label for="category">Category </label>
-        //         <select id="category">
-        //             <option value>Please choose a category...</option>
-        //             <option value>Dick pics</option>
-        //             <option value>Jackass</option>
-        //             <option value>Just being a dick</option>
-        //         </select>
-        //     </p>
-        //     <p>
-        //         <label for="rank">Rank</label>
-        //         <select id="rank">
-        //             <option value>Please choose a degree of burn...</option>
-        //             <option value>Whimsical</option>
-        //             <option value>Gonna need some Aloe Vera</option>
-        //             <option value>Manhood ruined</option>
-        //         </select>
-        //     </p>
-        //     <p><button type="submit">Submit</button></p>
-        // </div>
-    )
+        )
+    }
 }
 
 export default Form
