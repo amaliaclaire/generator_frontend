@@ -30,7 +30,7 @@ class Form extends Component {
                                         <br></br>
                                         <select id="rank">
                                             <option value>Degree of burn...</option>
-                                            <option value>Whimsical</option>
+                                            <option value>Whimsically Scolding</option>
                                             <option value>Gonna need some Aloe Vera</option>
                                             <option value>Manhood ruined</option>
                                         </select>
