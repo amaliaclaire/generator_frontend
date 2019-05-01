@@ -9,7 +9,7 @@ import View from './components/View'
 const baseURL = 'http://localhost:3000/responses'
 
 class App extends Component {
-  state = { isShown: true }
+  state = { isShown: false }
 
   componentDidMount() {
 
@@ -17,7 +17,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         {this.state.isShown ? (<View />) : (<Form />)}
       </div>
     )
