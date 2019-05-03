@@ -4,6 +4,11 @@ import Popper from 'popper.js'
 import 'bootstrap/dist/js/bootstrap.bundle.min'
 
 class View extends Component {
+    constructor(toggleView) {
+        super()
+        this.status = toggleView
+    }
+
     componentDidMount() {
         $('#formModal').modal({ backdrop: 'static', keyboard: false })
     }
@@ -57,7 +62,7 @@ class View extends Component {
                                 </div >
                             </div>
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary">Return</button>
+                                <button type="button" className="btn btn-secondary" onClick={this.status.toggleView}>Return</button>
                                 <button type="button" className="btn btn-primary">Load More</button>
                             </div>
                         </div>

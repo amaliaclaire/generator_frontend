@@ -15,10 +15,14 @@ class App extends Component {
 
   }
 
+  toggleView = () => {
+    this.state.isShown ? this.setState({ isShown: false }) : this.setState({ isShown: true })
+  }
+
   render() {
     return (
       <div className="container">
-        {this.state.isShown ? (<View />) : (<Form />)}
+        {this.state.isShown ? (<View toggleView={this.toggleView} />) : (<Form toggleView={this.toggleView} />)}
       </div>
     )
   }
