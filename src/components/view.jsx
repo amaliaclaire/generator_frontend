@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import $ from 'jquery'
 import Popper from 'popper.js'
 import 'bootstrap/dist/js/bootstrap.bundle.min'
+import Card from './Cards'
 
 class View extends Component {
     constructor(toggleView) {
@@ -23,42 +24,7 @@ class View extends Component {
                             </div>
                             <div className="modal-body">
                                 <div>
-                                    <div>
-                                        <figure className="highlight text-center">
-                                            <button className="btn-clipboard">Copy</button>
-                                            <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                        </figure>
-                                    </div>
-                                    <div>
-                                        <figure className="highlight text-center">
-                                            <button className="btn-clipboard">Copy</button>
-                                            <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                        </figure>
-                                    </div>
-                                    <div>
-                                        <figure className="highlight text-center">
-                                            <button className="btn-clipboard">Copy</button>
-                                            <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                        </figure>
-                                    </div>
-                                    <div>
-                                        <figure className="highlight text-center">
-                                            <button className="btn-clipboard">Copy</button>
-                                            <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                        </figure>
-                                    </div>
-                                    <div>
-                                        <figure className="highlight text-center">
-                                            <button className="btn-clipboard">Copy</button>
-                                            <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                        </figure>
-                                    </div>
-                                    <div>
-                                        <figure className="highlight text-center">
-                                            <button className="btn-clipboard">Copy</button>
-                                            <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                        </figure>
-                                    </div>
+                                    <Card />
                                 </div >
                             </div>
                             <div className="modal-footer">
