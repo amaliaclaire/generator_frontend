@@ -49,6 +49,14 @@
   background-color: #027de7;
 }
 
+.card {
+  margin: .25rem .25rem;
+}
+
+.card-body {
+  float: left;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
