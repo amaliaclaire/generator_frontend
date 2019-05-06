@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import $ from 'jquery'
 import Popper from 'popper.js'
 import 'bootstrap/dist/js/bootstrap.bundle.min'
+import View from './View'
 
 class Form extends Component {
 

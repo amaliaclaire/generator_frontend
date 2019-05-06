@@ -33,7 +33,8 @@ class View extends Component {
     // ******************************************
 
     makeCards = () => {
-        axios.get(`https://baconipsum.com/api/?type=meat-and-filler&sentences=10`)
+        let limit = this.state.limit + 5
+        axios.get(`https://baconipsum.com/api/?type=meat-and-filler&sentences=${limit}`)
             .then((response) => {
                 let quotes = response.data[0].split('.')
                 let cards = []
@@ -54,6 +55,12 @@ class View extends Component {
     copyToClipboard = (e, quote) => {
         e.preventDefault()
         copy(quote)
+    }
+
+    loadMore = (e) => {
+        e.preventDefault()
+        this.setState({ limit: this.state.limit + 5 })
+        this.makeCards()
     }
 
     render() {
@@ -81,7 +88,7 @@ class View extends Component {
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" onClick={this.status.toggleView}>Return</button>
-                                <button type="button" className="btn btn-primary">Load More</button>
+                                <button type="button" className="btn btn-primary" onClick={(e) => this.loadMore(e)}>Load More</button>
                             </div>
                         </div>
                     </div>
