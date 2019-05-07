@@ -12,14 +12,13 @@ class View extends Component {
         limit: 5
     }
 
-    constructor(toggleView) {
-        super()
-        this.status = toggleView
+    constructor(props) {
+        super(props)
     }
 
     componentDidMount() {
-        $('#formModal').modal({ backdrop: 'static', keyboard: false })
-        this.makeCards()
+        $('#viewModal').modal({ backdrop: 'static', keyboard: false })
+        this.makeCards(this.props.req)
     }
 
     // <<<<<<<< REMOVE ME BEFORE DEPLOY >>>>>>>>>
@@ -32,7 +31,8 @@ class View extends Component {
     }
     // ******************************************
 
-    makeCards = () => {
+    makeCards = (req) => {
+        console.log(req)
         let limit = this.state.limit + 5
         axios.get(`https://baconipsum.com/api/?type=meat-and-filler&sentences=${limit}`)
             .then((response) => {
@@ -67,7 +67,7 @@ class View extends Component {
         let toRender = this.state.cards.slice(0, this.state.limit)
         return (
             <div>
-                <div className="modal fade" id="formModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle">
+                <div className="modal fade" id="viewModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle">
                     <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
@@ -87,7 +87,7 @@ class View extends Component {
                                 </div >
                             </div>
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" onClick={this.status.toggleView}>Return</button>
+                                <button type="button" className="btn btn-secondary" onClick={this.props.toggleView}>Return</button>
                                 <button type="button" className="btn btn-primary" onClick={(e) => this.loadMore(e)}>Load More</button>
                             </div>
                         </div>

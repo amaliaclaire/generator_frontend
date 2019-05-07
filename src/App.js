@@ -9,10 +9,14 @@ import View from './components/View'
 const baseURL = 'http://localhost:3000/responses'
 
 class App extends Component {
-  state = { isShown: false }
+  state = { isShown: false, request: {} }
 
   componentDidMount() {
 
+  }
+
+  handleRequest = (req) => {
+    this.setState({ request: req })
   }
 
   toggleView = () => {
@@ -22,7 +26,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        {this.state.isShown ? (<View toggleView={this.toggleView} />) : (<Form toggleView={this.toggleView} />)}
+        {this.state.isShown ? (<View toggleView={this.toggleView} req={this.state.request} />) : (<Form toggleView={this.toggleView} handleRequest={this.handleRequest} />)}
       </div>
     )
   }

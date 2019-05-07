@@ -6,13 +6,20 @@ import View from './View'
 
 class Form extends Component {
 
-    constructor(toggleView) {
-        super()
-        this.status = toggleView
+    constructor(props) {
+        super(props)
+        // this.status = toggleView
     }
 
     componentDidMount() {
         $('#formModal').modal({ backdrop: 'static', keyboard: false })
+    }
+
+    handleSubmit = () => {
+        let category = $('#category').find(":selected").text()
+        let rank = $('#rank').find(":selected").text()
+        this.props.handleRequest({ category: category, rank: rank })
+        this.props.toggleView()
     }
 
     render() {
@@ -45,7 +52,7 @@ class Form extends Component {
                                 </form>
                             </div>
                             <div className="modal-footer">
-                                <button type="submit" className="btn btn-primary" onClick={this.status.toggleView}>Submit</button>
+                                <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
                             </div>
                         </div>
                     </div>
