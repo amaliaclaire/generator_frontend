@@ -4,9 +4,8 @@ import React from 'react'
 const Card = ({ copy, id, quote }) => {
     return (
         <div className="card">
-            <div className="card-body">
+            <div className="card-body" onClick={(e) => copy(e, quote)}>
                 {quote}
-                <button type="button" className="btn btn-clipboard" onClick={(e) => copy(e, quote)}>Copy</button>
             </div>
         </div>
     )

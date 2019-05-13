@@ -55,6 +55,7 @@ class View extends Component {
     copyToClipboard = (e, quote) => {
         e.preventDefault()
         copy(quote)
+        window.confirm('Copied to clipboard.')
     }
 
     loadMore = (e) => {
