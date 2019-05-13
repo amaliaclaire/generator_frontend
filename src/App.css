@@ -28,6 +28,9 @@
     display: block;
 }
 
+.card {
+  margin: .5rem;
+}
 
 #view-modal-dialog{
     overflow-y: initial !important
