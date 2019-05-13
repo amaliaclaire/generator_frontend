@@ -12,7 +12,7 @@ class Form extends Component {
     }
 
     componentDidMount() {
-        $('#formModal').modal({ backdrop: 'static', keyboard: false })
+        $('#form-modal').modal({ backdrop: 'static', keyboard: false })
     }
 
     handleSubmit = () => {
@@ -25,7 +25,7 @@ class Form extends Component {
     render() {
         return (
             <div>
-                <div className="modal fade" id="formModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle">
+                <div className="modal fade" id="form-modal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle">
                     <div className="modal-dialog modal-dialog-centered" role="document">
                         <div className="modal-content">
                             <div className="modal-header">

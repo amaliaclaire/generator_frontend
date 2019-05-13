@@ -17,7 +17,7 @@ class View extends Component {
     }
 
     componentDidMount() {
-        $('#viewModal').modal({ backdrop: 'static', keyboard: false })
+        $('#view-modal').modal({ backdrop: 'static', keyboard: false })
         this.makeCards(this.props.req)
     }
 
@@ -67,13 +67,13 @@ class View extends Component {
         let toRender = this.state.cards.slice(0, this.state.limit)
         return (
             <div>
-                <div className="modal fade" id="viewModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle">
-                    <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div className="modal fade" id="view-modal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle">
+                    <div className="modal-dialog modal-dialog-centered modal-lg" id="view-modal-dialog" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title" id="exampleModalCenterTitle">Sassy Responses Generator</h5>
+                                <h5 className="modal-title" id="ModalCenterTitle">Sassy Responses Generator</h5>
                             </div>
-                            <div className="modal-body">
+                            <div className="modal-body" id="view-modal-body">
                                 <div>
                                     {toRender.map((card, i) => {
                                         return <Card
