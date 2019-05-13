@@ -18,8 +18,12 @@ class Form extends Component {
     handleSubmit = () => {
         let category = $('#category').find(":selected").text()
         let rank = $('#rank').find(":selected").text()
-        this.props.handleRequest({ category: category, rank: rank })
-        this.props.toggleView()
+        if ((category === 'Category...') || (rank === 'Degree of burn...')) {
+            window.alert("Please select a Category and Degree of burn!")
+        } else {
+            this.props.handleRequest({ category: category, rank: rank })
+            this.props.toggleView()
+        }
     }
 
     render() {
