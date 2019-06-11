@@ -34,15 +34,19 @@ class View extends Component {
     makeCards = (req) => {
         console.log(req)
         let limit = this.state.limit + 5
-        axios.get(`https://baconipsum.com/api/?type=meat-and-filler&sentences=${limit}`)
+        axios.get(`http://localhost:3000/responses`)
             .then((response) => {
-                let quotes = response.data[0].split('.')
+              console.log('response', response);
+                let quotes = response.data.quotes
+                // get text from the array of objects
+                console.log('quotes', quotes);
                 let cards = []
                 quotes.map((e) => {
+                  console.log('e', e);
                     cards.push(
                         {
                             id: this.makeID(),
-                            quote: e,
+                            quote: e.quote,
                             category: 'blah',
                             rank: 'meh'
                         })
